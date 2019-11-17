@@ -1,8 +1,10 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-family: 'Roboto Mono', monospace;
+	background-color: rgb(255, 255, 255);
+	color: rgb(31, 31, 31);
 }
 
 a {
-  color: #00B7FF;
+	color: #00b7ff;
 }

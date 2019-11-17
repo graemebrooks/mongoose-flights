@@ -1,13 +1,14 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-function addOneYear() {
+let addYear = function() {
 	let d = new Date();
 	let year = d.getFullYear();
 	let month = d.getMonth();
 	let day = d.getDate();
 	let result = new Date(year + 1, month, day);
-}
+	return result;
+};
 
 var flightSchema = new Schema({
 	airline: {
@@ -21,6 +22,8 @@ var flightSchema = new Schema({
 	},
 	departs: {
 		type: Date,
-		default: addOneYear()
+		default: addYear()
 	}
 });
+
+module.exports = mongoose.model('Flight', flightSchema);
