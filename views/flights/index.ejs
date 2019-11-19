@@ -1,21 +1,29 @@
-<%- include('../header.ejs') %>
+<%- include('../partials/header.ejs') %>
     <h1>Flight List</h1>
     <table>
         <thead>
             <th>Airline</th>
             <th>Flight Number</th>
             <th>Departure Date</th>
+            <th></th>
         </thead>
         <tbody>
             <% flights.forEach(function(flight) { %>
                 <tr>
                     <td><%= flight.airline %></td>
                     <td><%= flight.flightNo %></td>
-                    <td><%= flight.departs %></td>
+                    <td>
+                        <%= flight.departs %>
+                    </td>
+                    <td><a href="/flights/<%= flight._id %>">Details</a></td>
+                    <td>
+                        <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST" id="deleteFlight">
+                            <button type="submit" form="deleteFlight" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             <% }); %>
         </tbody>
     </table>
     <a href="/flights/new">Create New Flight</a>
-</body>
-</html>
+<%- include('../partials/footer.ejs') %>

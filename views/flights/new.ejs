@@ -1,4 +1,4 @@
-<%- include('../header.ejs') %>
+<%- include('../partials/header.ejs') %>
     <h1>New Flight</h1>
     <form action="/flights" method="POST" id="form1">
         <label>Airline
@@ -10,7 +10,17 @@
         <label>Departure
             <input type="datetime-local" name="departs">
         </label><br>
+        <div>
+            <p>Default Departure Date:</p>
+            <p><%= destDate %></p>
+        </div>
+        <select name="airport" id="">
+            <option value="AUS">AUS</option>
+            <option value="DAL">DAL</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+        </select>
+        <br>
         <button type="submit" form="form1" class="btn btn-success">Add Flight</button>
     </form>
-</body>
-</html>
+<%- include('../partials/footer.ejs') %>

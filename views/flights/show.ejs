@@ -1,0 +1,80 @@
+<%- include('../partials/header.ejs') %>
+
+<section id="show-page">
+    <div>Airline:</div>
+    <div><%= flight.airline %></div>
+    <div>Flight Number:</div>
+    <div><%= flight.flightNo %></div>
+    <div>Departs</div>
+    <div><%= flight.departs %></div>
+    <div>Airport: </div>
+    <div><%= flight.airport %></div>
+    <!-- <div>Destinations: </div>
+    <div><%= flight.airport %></div> -->
+</section>
+
+<form action="/flights/<%= flight._id %>/destinations" method="POST" id="add-destination-form">
+    <p>Add Destination</p>
+    <select name="airport" id="">
+        <option value="AUS">AUS</option>
+        <option value="DAL">DAL</option>
+        <option value="LAX">LAX</option>
+        <option value="SAN">SAN</option>
+    </select>
+    <label>Arrival
+        <input type="datetime-local" name="arrival">
+    </label><br>
+    <input type="submit" value="Add Destination">
+    <!-- <button type="submit" form="add-destination-form" class="btn btn-success">Add Destination</button> -->
+</form>
+
+<% if (flight.destinations.length) { %>
+
+    <table>
+        <thead>
+            <th>
+                Destination:
+            </th>
+            <th>
+                Arrives At:
+            </th>
+        </thead>
+    
+
+    <% flight.destinations.forEach(function(destination){ %>
+        <tr>
+            <td><%= destination.airport %></td>
+            <td><%= destination.arrival %></td>
+        </tr>
+    <% }); %>
+    </table>
+
+<% } else { %>
+
+    <p>No Destinations</p>
+
+<% } %>
+
+<section>
+    <h2>Tickets</h2>
+    <table>
+        <thead>
+            <th>
+                Seat
+            </th>
+            <th>
+                Price
+            </th>
+        </thead>
+        <% tickets.forEach(function(ticket) { %>
+            <tr>
+                <td><%= ticket.seat %></td>
+                <td><%= ticket.price %></td>
+            </tr>
+        <% }) %>
+    </table>
+</section>
+
+<a href="/flights/<%= flight._id %>/tickets/new">Create a new ticket</a>
+
+<%- include('../partials/footer.ejs') %>

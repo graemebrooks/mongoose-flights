@@ -1,10 +1,22 @@
 body {
 	font-size: 14px;
 	font-family: 'Roboto Mono', monospace;
-	background-color: rgb(255, 255, 255);
-	color: rgb(31, 31, 31);
+	background-color: rgb(49, 49, 49);
+	color: rgb(223, 185, 60);
 }
 
 a {
 	color: #00b7ff;
+}
+
+.navbar {
+	background-color: #be59c9;
+	color: white;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
