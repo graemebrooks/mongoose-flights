@@ -1,11 +1,10 @@
 <%- include('../partials/header.ejs') %>
     <h1>Flight List</h1>
-    <table>
+    <table class="table" id="flight-index">
         <thead>
-            <th>Airline</th>
-            <th>Flight Number</th>
-            <th>Departure Date</th>
-            <th></th>
+            <th scope="col">Airline</th>
+            <th scope="col">Flight Number</th>
+            <th scope="col">Departure Date</th>
         </thead>
         <tbody>
             <% flights.forEach(function(flight) { %>
@@ -15,7 +14,7 @@
                     <td>
                         <%= flight.departs %>
                     </td>
-                    <td><a href="/flights/<%= flight._id %>">Details</a></td>
+                    <td><a href="/flights/<%= flight._id %>" class="btn btn-info">Details</a></td>
                     <td>
                         <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST" id="deleteFlight">
                             <button type="submit" form="deleteFlight" class="btn btn-danger">Delete</button>
@@ -25,5 +24,7 @@
             <% }); %>
         </tbody>
     </table>
-    <a href="/flights/new">Create New Flight</a>
+    <div id="add-flight">
+        <a href="/flights/new" class="btn btn-primary btn-lg btn-block">Create New Flight</a>
+    </div>
 <%- include('../partials/footer.ejs') %>

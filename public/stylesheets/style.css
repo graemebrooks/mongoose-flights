@@ -1,17 +1,21 @@
+* {
+	margin: 0;
+}
+
 body {
 	font-size: 14px;
-	font-family: 'Roboto Mono', monospace;
-	background-color: rgb(49, 49, 49);
-	color: rgb(223, 185, 60);
+	font-family: 'Ubuntu', sans-serif;
+	background-color: rgb(255, 255, 255);
+	color: rgb(36, 36, 36);
+}
+
+h1 {
+	font-weight: 700;
+	padding: 20px 0 20px 0;
 }
 
 a {
 	color: #00b7ff;
-}
-
-.navbar {
-	background-color: #be59c9;
-	color: white;
 }
 
 main {
@@ -19,4 +23,101 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 100vw;
+}
+
+.table {
+	color: rgb(36, 36, 36);
+	background-color: rgb(245, 245, 245);
+	border: none;
+}
+
+thead {
+	border-top: none;
+}
+
+#flight-index {
+	width: 80%;
+}
+
+#add-flight {
+	width: 80%;
+}
+
+#new-flight-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 35%;
+	background-color: rgb(245, 245, 245);
+}
+
+#submit-new-flight {
+	margin: 10px 0 10px 0;
+}
+
+label,
+select,
+#form1 {
+	margin: 10px 0 10px 0;
+}
+
+.show-info {
+	margin: 15px;
+}
+
+section {
+	margin: 10px;
+}
+
+#add-destination {
+	background-color: rgb(245, 245, 245);
+	width: 95%;
+	padding: 5px;
+}
+
+#show-destinations {
+	width: 95%;
+}
+
+#show-flights-main {
+	display: grid;
+	grid-template-columns: 1fr 2fr 2fr;
+	height: 100vh;
+}
+
+aside {
+	background-color: rgb(245, 245, 245);
+	height: 100%;
+	display: grid;
+	grid-template-rows: 100px auto;
+}
+
+#flight-info-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#column-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+#column-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+#tickets-table {
+	width: 95%;
+}
+
+#new-ticket-btn {
+	width: 95%;
 }
