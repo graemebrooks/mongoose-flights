@@ -26,4 +26,4 @@ function deleteTicket(req, res) {
 			res.redirect(`/flights/${ticket.flight._id}`);
 		});
 	});
-}
+}``
