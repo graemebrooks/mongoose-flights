@@ -12,7 +12,8 @@ An exercise in producing a full stack CRUD application that utilizes a node/mong
 
 Schema for the flights themselves:
 
-```const flightSchema = new Schema({
+```
+const flightSchema = new Schema({
 	airline: {
 		type: String,
 		enum: [ 'American', 'Southwest', 'United' ]
@@ -38,21 +39,24 @@ Schema for the flights themselves:
 		enum: [ 'AUS', 'DAL', 'LAX', 'SAN' ]
 	},
 	destinations: [ destinationSchema ]
-});```
-
+});
+```
 The embedded destination schema:
 
-```const destinationSchema = new Schema({
+```
+const destinationSchema = new Schema({
 	airport: {
 		type: String,
 		enum: [ 'AUS', 'DAL', 'LAX', 'SAN' ]
 	},
 	arrival: Date
-});```
+});
+```
 
 The Ticket Schema, which references the flight it's associated with:
 
-```const ticketSchema = new Schema({
+```
+const ticketSchema = new Schema({
 	seat: {
 		type: String,
 		match: /[A-F][1-9]\d?/
@@ -65,7 +69,8 @@ The Ticket Schema, which references the flight it's associated with:
 		type: Schema.Types.ObjectId,
 		ref: 'Flight'
 	}
-});```
+});
+```
 
 
 
