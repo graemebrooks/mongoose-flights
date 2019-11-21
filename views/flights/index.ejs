@@ -5,6 +5,8 @@
             <th scope="col">Airline</th>
             <th scope="col">Flight Number</th>
             <th scope="col">Departure Date</th>
+            <th scope="col">Flight Details</th>
+            <th scope="col">Delete Flight</th>
         </thead>
         <tbody>
             <% flights.forEach(function(flight) { 
@@ -38,7 +40,7 @@
                     <td><a href="/flights/<%= flight._id %>" class="btn btn-info" id="flight-info-btn">Details</a></td>
                     <td>
                         <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST" id="deleteFlight">
-                            <button type="submit" form="deleteFlight" class="btn btn-danger">Delete</button>
+                            <button type="submit" form="deleteFlight" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                         </form>
                     </td>
                 </tr>
