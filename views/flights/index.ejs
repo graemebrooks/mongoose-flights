@@ -26,7 +26,7 @@
                     <td><a href="/flights/<%= flight._id %>" class="btn btn-info" id="flight-info-btn">Details</a></td>
                     <td>
                         <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST" id="deleteFlight">
-                            <button type="submit" form="deleteFlight" class="btn btn-danger">Delete</button>
+                            <button type="submit" form="deleteFlight" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                         </form>
                     </td>
                 </tr>
